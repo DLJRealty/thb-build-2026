@@ -1,0 +1,44 @@
+{
+ "no01": {
+  "name": "Boutique TinyHome w/Direct View of PikesPeak!",
+  "id": "665a027c85c7ea0013ef3865",
+  "img": "assets/units/no01-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/v1717175094/xxv63qgecggbqlf4cwru.jpg",
+  "count": 59
+ },
+ "no02": {
+  "name": "Pikes Peak Boutique Retreat",
+  "id": "665a026f31dec90011ea1cf0",
+  "img": "assets/units/no02-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/v1717175057/oeww6lzi0ghir4comnsf.jpg",
+  "count": 49
+ },
+ "no03": {
+  "name": "Pikes Peak BrightStar Boutique",
+  "id": "665a026f6748540013691e65",
+  "img": "assets/units/no03-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/v1717175062/nabyoxbcxslggzpqfgap.jpg",
+  "count": 41
+ },
+ "no04": {
+  "name": "Pikes Peak Heaven's Retreat",
+  "id": "675ada1a6e67f00012fe5ce6",
+  "img": "assets/units/no04-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/v1740535469/production/66565be6ef6be074587681ab/cfebb3cgyspwmdvn1sfb.jpg",
+  "count": 46
+ },
+ "no05": {
+  "name": "Pikes Peak Mountain Retreat",
+  "id": "69bc89b3c13a5a0013d38be8",
+  "img": "assets/units/no05-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/listing_images_s3/production/property-photos/37f58986546b85979d10748f59e7338167d897d659968996/69bc89b3c13a5a0013d38be8/b77b2fc2-2c38-4d-qZK37",
+  "count": 36
+ },
+ "no06": {
+  "name": "Woodland Peak Tiny Lodge",
+  "id": "6a03b7807e628900149378d0",
+  "img": "assets/units/no06-cover.jpg",
+  "src": "https://assets.guesty.com/image/upload/v1778900094/production/66565be6ef6be074587681ab/sxz72zlv6mr6q4wjajih.jpg",
+  "count": 30
+ }
+}

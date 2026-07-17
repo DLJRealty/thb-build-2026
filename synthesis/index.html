@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Tiny Home Boutiques — Wake up under Pikes Peak · Woodland Park, Colorado</title>
+<meta name="description" content="Seven design-forward boutique stays in Woodland Park, Colorado. Book direct with your hosts — Airbnb Superhost, 1,000+ five-star reviews.">
+<!-- ============================================================
+     SYNTHESIS — "ALPENGLOW EDITORIAL"
+     CEO synthesis verdict: A's cinematic scene structure ×
+     B's conversion mechanics × C's editorial voice.
+     Draft build — noindex. No build step, no external JS libs.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../assets/hero/unit-y-peak-window.jpg">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Scroll-linked alpenglow sky: golden dawn → daylight → dusk tint (opacity crossfade only) -->
+<div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-dawn"></div>
+  <div class="sky-layer sky-day" id="skyDay"></div>
+  <div class="sky-layer sky-dusk" id="skyDusk"></div>
+</div>
+
+<!-- Custom lerped cursor (desktop fine-pointer only; JS-gated) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ================= NAV — glass-morphism sticky ================= -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <span class="brand-name">Tiny Home <em>Boutiques</em></span>
+      <span class="brand-sub">Woodland Park · Colorado</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#collection">The Collection</a>
+      <a href="#direct">Book Direct</a>
+      <a href="#area">The Area</a>
+    </nav>
+    <a class="btn btn-solid nav-cta magnetic" href="https://tinyhomeboutiques.guestybookings.com/" target="_blank" rel="noopener">Check Availability</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO — dawn act ================= -->
+<section class="hero" id="hero">
+  <div class="hero-media" id="heroMedia">
+    <img id="heroStill" class="hero-still kenburns" src="../assets/hero/unit-y-peak-window.jpg"
+         width="1200" height="800" alt="Pikes Peak framed in the window above a morning coffee cup" fetchpriority="high">
+    <video id="heroVideo" class="hero-video" data-src="../assets/hero/variant-b-higgs-motion-pikes-dawn.mp4"
+           preload="none" muted loop playsinline aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="hero-grade" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-content wrap">
+    <p class="kicker hero-kicker reveal">Woodland Park · Colorado · 8,500 ft</p>
+    <h1 class="hero-title" id="heroTitle">Wake up under Pikes Peak.</h1>
+    <p class="hero-sub reveal reveal-d2">Seven design-forward boutique stays in Woodland Park, Colorado — thoughtfully styled, personally cared for, and just 25 minutes from Colorado Springs. This is the mountain getaway you keep promising yourself.</p>
+    <div class="hero-actions reveal reveal-d3">
+      <a class="btn btn-solid magnetic" href="https://tinyhomeboutiques.guestybookings.com/" target="_blank" rel="noopener">Check Availability</a>
+      <a class="btn btn-ghost magnetic" href="#collection">Explore Our Homes ↓</a>
+    </div>
+  </div>
+  <!-- internal review toggle: still (A, default) ↔ motion (B). Owner picks at review. -->
+  <button class="ab-pill" id="abPill" type="button" aria-pressed="false" title="Internal review: toggle hero still / motion">A/B</button>
+  <div class="hero-scrollcue" aria-hidden="true"><span>Scroll</span></div>
+</section>
+
+<!-- ================= TRUST BAR — the one, verbatim ================= -->
+<section class="trustbar reveal" aria-label="Guest trust">
+  <p class="wrap">Airbnb Superhost · 1,000+ five-star reviews · Fast, personal replies — day or night</p>
+</section>
+
+<!-- ================= THE COLLECTION ================= -->
+<section class="collection" id="collection">
+  <div class="wrap">
+    <header class="sect-head reveal">
+      <p class="kicker">The Collection · No.01–07</p>
+      <h2>Seven small houses. One enormous mountain.</h2>
+      <p class="sect-intro">Every stay is individually designed, meticulously kept, and minutes from Pikes Peak. Pick your view.</p>
+    </header>
+
+    <div class="cards">
+
+      <a class="card reveal" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a027c85c7ea0013ef3865" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no01-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Boutique TinyHome w/Direct View of PikesPeak!"></figure>
+        <span class="card-badge">Most loved — 4.9+ across 290+ reviews</span>
+        <div class="card-body">
+          <span class="card-no">No.01</span>
+          <h3 class="card-name">Boutique TinyHome w/Direct View of PikesPeak!</h3>
+          <p class="card-identity">The one with the Peak in the window.</p>
+          <p class="card-facts">Direct Pikes Peak view · sleeps 4 · gas fire pit</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <a class="card reveal reveal-d1" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a026f31dec90011ea1cf0" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no02-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Pikes Peak Boutique Retreat"></figure>
+        <span class="card-badge">4.9+ · Top-rated of the collection</span>
+        <div class="card-body">
+          <span class="card-no">No.02</span>
+          <h3 class="card-name">Pikes Peak Boutique Retreat</h3>
+          <p class="card-identity">Quietly our highest-rated stay.</p>
+          <p class="card-facts">Sleeps 6 · gas fire pit · propane grill</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <a class="card reveal reveal-d2" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a026f6748540013691e65" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no03-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Pikes Peak BrightStar Boutique"></figure>
+        <span class="card-badge">4.9+ across 140 reviews</span>
+        <div class="card-body">
+          <span class="card-no">No.03</span>
+          <h3 class="card-name">Pikes Peak BrightStar Boutique</h3>
+          <p class="card-identity">Stay for the stars.</p>
+          <p class="card-facts">Sleeps 4 · gas fire pit · propane grill</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <a class="card reveal" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/675ada1a6e67f00012fe5ce6" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no04-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Pikes Peak Heaven's Retreat"></figure>
+        <span class="card-badge">Well-reviewed</span>
+        <div class="card-body">
+          <span class="card-no">No.04</span>
+          <h3 class="card-name">Pikes Peak Heaven's Retreat</h3>
+          <p class="card-identity">An evening by the fire, halfway to heaven.</p>
+          <p class="card-facts">Sleeps 4 · gas fire pit</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <a class="card reveal reveal-d1" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/69bc89b3c13a5a0013d38be8" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no05-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Pikes Peak Mountain Retreat"></figure>
+        <span class="card-badge">Newest addition</span>
+        <div class="card-body">
+          <span class="card-no">No.05</span>
+          <h3 class="card-name">Pikes Peak Mountain Retreat</h3>
+          <p class="card-identity">The newest view in the collection — and it's panoramic.</p>
+          <p class="card-facts">Sleeps 6 · panoramic mountain views · gas fire pit</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <a class="card reveal reveal-d2" data-tilt href="https://tinyhomeboutiques.guestybookings.com/en/properties/6a03b7807e628900149378d0" target="_blank" rel="noopener">
+        <figure class="card-media"><img src="../assets/units/no06-cover.jpg" loading="lazy" decoding="async" width="1200" height="800" data-parallax alt="Woodland Peak Tiny Lodge"></figure>
+        <span class="card-badge">New listing</span>
+        <div class="card-body">
+          <span class="card-no">No.06</span>
+          <h3 class="card-name">Woodland Peak Tiny Lodge</h3>
+          <p class="card-identity">The one that brings everyone.</p>
+          <p class="card-facts">Sleeps 6 — our roomiest tiny home</p>
+          <span class="card-cta">Check dates →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+      <!-- No.07 — pre-launch, typographic card (no photography exists yet; no invented imagery) -->
+      <a class="card card-soon reveal card-wide" data-tilt href="#stay-in-touch">
+        <div class="card-soon-art" aria-hidden="true"><span class="card-soon-no">No.07</span></div>
+        <span class="card-badge card-badge-soon">Coming soon — join the opening list</span>
+        <div class="card-body">
+          <span class="card-no">No.07</span>
+          <h3 class="card-name">Woodland Park Home with Direct Views of Pikes Peak!</h3>
+          <p class="card-identity">The full house. Worth the wait.</p>
+          <p class="card-facts">Full home · direct Pikes Peak views · propane grill</p>
+          <span class="card-cta">Join the Opening List →</span>
+        </div>
+        <span class="card-sheen" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY BOOK DIRECT ================= -->
+<section class="direct" id="direct">
+  <div class="wrap">
+    <header class="sect-head reveal">
+      <p class="kicker">Book Direct</p>
+      <h2>The Best Way to Book Is Right Here</h2>
+    </header>
+    <ul class="direct-grid">
+      <li class="reveal"><h3>Deal directly with your hosts.</h3><p>No middleman, no ticket queues — just the people who know these homes best.</p></li>
+      <li class="reveal reveal-d1"><h3>Skip third-party service fees.</h3><p>Booking platforms add their own fees on top. Booking direct means your money goes toward your stay, not a booking site.</p></li>
+      <li class="reveal reveal-d2"><h3>Fast, human answers.</h3><p>Questions before or during your trip get answered in minutes — around the clock.</p></li>
+      <li class="reveal reveal-d3"><h3>First access to new homes and dates.</h3><p>Our direct guests hear about openings before anyone else.</p></li>
+    </ul>
+    <p class="direct-cta reveal"><a class="btn btn-solid magnetic" href="https://tinyhomeboutiques.guestybookings.com/" target="_blank" rel="noopener">Check Availability →</a></p>
+  </div>
+</section>
+
+<!-- ================= AREA TEASER — dusk act ================= -->
+<section class="area" id="area">
+  <div class="area-grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sect-head reveal">
+      <p class="kicker kicker-light">The Area</p>
+      <h2>Woodland Park: The City Above the Clouds</h2>
+    </header>
+    <p class="area-body reveal reveal-d1">Woodland Park sits at 8,500 feet on the shoulder of Pikes Peak — close enough to Colorado Springs for a dinner out (about 25 minutes), far enough to trade traffic for treetops. Hike aspen-lined trails in summer, watch the hillsides turn gold in fall, wake to fresh snow in winter, and stay up for some of the clearest stargazing in Colorado, every season of the year.</p>
+    <p class="area-cta reveal reveal-d2"><a class="btn btn-ghost magnetic" href="https://tinyhomeboutiques.guestybookings.com/" target="_blank" rel="noopener">Check Availability</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="brand-name">Tiny Home <em>Boutiques</em></p>
+      <p>Design-forward boutique stays in Woodland Park, Colorado. Family-run, personally hosted, minutes from Pikes Peak.</p>
+    </div>
+    <nav class="footer-homes" aria-label="Our Homes">
+      <h3>Our Homes</h3>
+      <ul>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a027c85c7ea0013ef3865" target="_blank" rel="noopener">Boutique TinyHome w/Direct View of PikesPeak!</a></li>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a026f31dec90011ea1cf0" target="_blank" rel="noopener">Pikes Peak Boutique Retreat</a></li>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/665a026f6748540013691e65" target="_blank" rel="noopener">Pikes Peak BrightStar Boutique</a></li>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/675ada1a6e67f00012fe5ce6" target="_blank" rel="noopener">Pikes Peak Heaven's Retreat</a></li>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/69bc89b3c13a5a0013d38be8" target="_blank" rel="noopener">Pikes Peak Mountain Retreat</a></li>
+        <li><a href="https://tinyhomeboutiques.guestybookings.com/en/properties/6a03b7807e628900149378d0" target="_blank" rel="noopener">Woodland Peak Tiny Lodge</a></li>
+        <li><a href="#stay-in-touch">Woodland Park Home with Direct Views of Pikes Peak! <span class="soon-tag">(coming soon)</span></a></li>
+      </ul>
+    </nav>
+    <div class="footer-loop" id="stay-in-touch">
+      <h3>Stay in the Loop</h3>
+      <p>Be first to hear about new homes and open dates.</p>
+      <!-- DRAFT STUB — email capture not yet wired to a list provider -->
+      <form class="loop-form" action="#" method="get">
+        <label class="sr-only" for="loop-email">Email address</label>
+        <input id="loop-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn btn-solid" type="submit">Join the List</button>
+      </form>
+      <p class="loop-note">Draft preview — sign-up goes live with the site.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="wrap">© Tiny Home Boutiques · Woodland Park, Colorado · Airbnb Superhost · 1,000+ five-star reviews</p>
+  </div>
+</footer>
+
+<!-- mobile sticky book-direct bar (QA checklist §E) -->
+<div class="mobile-book-bar" aria-hidden="false">
+  <a class="btn btn-solid" href="https://tinyhomeboutiques.guestybookings.com/" target="_blank" rel="noopener">Book Direct — Check Availability</a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
