@@ -1,0 +1,168 @@
+{
+  "_rules": {
+    "names": "Use guesty_display_name verbatim. Never render discouraged names.",
+    "banned": {
+      "hot_tub": "NO DLJ unit has a hot tub per Owner 2026-04-17 09:38 ET. Mountain Retreat explicitly does NOT have one. Do not write 'hot tub' or 'jacuzzi' claims for any listing unless Owner reverses."
+    },
+    "discouraged_names": {
+      "Little Joy Lodge": "Legacy Airbnb vanity slug only (/h/littlejoylodge -> Unit Y). NOT a current display title. Never render in user-facing content.",
+      "Pikes Peak Retreat": "Truncated/stale form of Unit W \u2014 true name is 'Pikes Peak Boutique Retreat'. Never render.",
+      "BrightStar Boutique": "Truncated/stale form of Unit X \u2014 true name is 'Pikes Peak BrightStar Boutique'. Never render.",
+      "Direct View Tiny Home": "Self-sanctioned short form of Unit Y. Unit Y has NO sanctioned short form (unit_policy.short_form_sanctioned=false). Use full Guesty/Airbnb title verbatim until Owner rules.",
+      "Pikes Peak Tiny Home": "Generic/ambiguous \u2014 could match any of the 4 CO units. Use the specific Guesty/Airbnb display name."
+    },
+    "no_pricing": "NO pricing claims \u2014 Owner-only",
+    "no_ai_disclosure": "NEVER mention AI/agents/automation tech. Sell benefits: 60-sec response, 24/7 coverage, 5-star hosting.",
+    "colorado_only": "Miami NEVER appears on this site."
+  },
+  "units": [
+    {
+      "guesty_listingId": "665a027c85c7ea0013ef3865",
+      "guesty_display_name": "Boutique TinyHome w/Direct View of PikesPeak!",
+      "guesty_nickname": "Unit Y",
+      "internal_label": "Unit Y",
+      "airbnb_url": "https://www.airbnb.com/rooms/704910906218647468",
+      "airbnb_room_id": "704910906218647468",
+      "airbnb_vanity_slug": "https://www.airbnb.com/h/littlejoylodge",
+      "airbnb_display_name": "Boutique TinyHome w/Direct View of PikesPeak!",
+      "airbnb_rating": 4.91,
+      "airbnb_reviews_count": 293,
+      "on_website": true,
+      "on_socials": true,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [
+        "direct Pikes Peak view",
+        "gas fire pit (gas, no wood/kindling)"
+      ],
+      "amenities_prohibited": [
+        "hot tub",
+        "wood/kindling/firewood fire"
+      ],
+      "unit_policy": {
+        "short_form_sanctioned": false,
+        "policy": "No short form sanctioned. Captions MUST use the live Guesty/Airbnb display title ('Boutique TinyHome w/Direct View of PikesPeak!') verbatim until Owner rules on _meta.owner_review_pending item 3. Interim posture is fail-closed per feedback_brand_consistency_top_down.md \u2014 never self-sanction a short form."
+      },
+      "notes": "Slug /h/littlejoylodge is a LEGACY vanity URL; 'Little Joy Lodge' is NOT the current display name. Do not render 'Little Joy Lodge' in user-facing content. Owner sub-decision open: sanction a shorter form vs. full 47-char title \u2014 until that rules, unit_policy.short_form_sanctioned=false applies."
+    },
+    {
+      "guesty_listingId": "665a026f31dec90011ea1cf0",
+      "guesty_display_name": "Pikes Peak Boutique Retreat",
+      "guesty_nickname": "Unit W",
+      "internal_label": "Unit W",
+      "airbnb_url": "https://www.airbnb.com/rooms/1157418080674498913",
+      "airbnb_room_id": "1157418080674498913",
+      "airbnb_vanity_slug": "https://www.airbnb.com/h/pikespeakboutique",
+      "airbnb_display_name": "Pikes Peak Boutique Retreat",
+      "airbnb_rating": 4.96,
+      "airbnb_reviews_count": 139,
+      "on_website": true,
+      "on_socials": true,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [
+        "gas fire pit (gas, no wood/kindling)"
+      ],
+      "amenities_prohibited": [
+        "hot tub",
+        "wood/kindling/firewood fire"
+      ],
+      "notes": "CLAUDE.md 'Pikes Peak Retreat' was STALE/truncated. True name = 'Pikes Peak Boutique Retreat'. Highest-rated of the 4 Woodland Park units in our portfolio."
+    },
+    {
+      "guesty_listingId": "665a026f6748540013691e65",
+      "guesty_display_name": "Pikes Peak BrightStar Boutique",
+      "guesty_nickname": "Unit X",
+      "internal_label": "Unit X",
+      "airbnb_url": "https://www.airbnb.com/rooms/1157510573326154721",
+      "airbnb_room_id": "1157510573326154721",
+      "airbnb_vanity_slug": "https://www.airbnb.com/h/brightstarlodge",
+      "airbnb_display_name": "Pikes Peak BrightStar Boutique",
+      "airbnb_rating": 4.91,
+      "airbnb_reviews_count": 140,
+      "on_website": true,
+      "on_socials": true,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [
+        "gas fire pit (gas, no wood/kindling)"
+      ],
+      "amenities_prohibited": [
+        "hot tub",
+        "wood/kindling/firewood fire"
+      ],
+      "notes": "CLAUDE.md 'BrightStar Boutique' was STALE/truncated. True name = 'Pikes Peak BrightStar Boutique'."
+    },
+    {
+      "guesty_listingId": "675ada1a6e67f00012fe5ce6",
+      "guesty_display_name": "Pikes Peak Heaven's Retreat",
+      "guesty_nickname": "Unit 33",
+      "internal_label": "Unit 33",
+      "airbnb_url": "https://www.airbnb.com/rooms/1305846645531224893",
+      "airbnb_room_id": "1305846645531224893",
+      "airbnb_vanity_slug": "https://www.airbnb.com/h/pikespeakhaven",
+      "airbnb_display_name": "Pikes Peak Heaven's Retreat",
+      "airbnb_rating": 4.79,
+      "airbnb_reviews_count": 85,
+      "on_website": true,
+      "on_socials": true,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [
+        "gas fire pit (gas, no wood/kindling)"
+      ],
+      "amenities_prohibited": [
+        "hot tub",
+        "wood/kindling/firewood fire"
+      ],
+      "notes": "Lowest rating among the 4 Woodland Park tiny homes. Use in-aggregate 'well-reviewed' language."
+    },
+    {
+      "guesty_listingId": "69bc89b3c13a5a0013d38be8",
+      "guesty_display_name": "Pikes Peak Mountain Retreat",
+      "guesty_nickname": "!LOT19253",
+      "internal_label": "Mountain Retreat",
+      "airbnb_url": "https://www.airbnb.com/rooms/1622793080695903669",
+      "airbnb_room_id": "1622793080695903669",
+      "airbnb_vanity_slug": "https://www.airbnb.com/h/woodland23",
+      "airbnb_display_name": "Mountain Retreat!",
+      "airbnb_rating": 5.0,
+      "airbnb_reviews_count": 1,
+      "on_website": true,
+      "on_socials": true,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [
+        "gas fire pit (gas, no wood/kindling)",
+        "panoramic mountain views"
+      ],
+      "amenities_prohibited": [
+        "hot tub",
+        "wood/kindling/firewood fire"
+      ],
+      "notes": "5th CO listing \u2014 MISSING from current CLAUDE.md L19-L31. Airbnb display 'Mountain Retreat!' diverges from Guesty 'Pikes Peak Mountain Retreat'. NEW listing (1 review). Do NOT claim Superhost or aggregate-rating social proof yet. on_website=false until Owner approves website launch (web staging diff manifest sub-decision iv). on_socials=true = in socials rotation already."
+    },
+    {
+      "guesty_listingId": "6a03b7807e628900149378d0",
+      "guesty_display_name": "Woodland Peak Tiny Lodge",
+      "guesty_nickname": "Unit 35",
+      "internal_label": "Unit 35",
+      "airbnb_url": "https://www.airbnb.com/rooms/1679043422816384080",
+      "airbnb_room_id": "1679043422816384080",
+      "airbnb_vanity_slug": null,
+      "airbnb_display_name": "Woodland Peak Tiny Lodge",
+      "airbnb_rating": null,
+      "airbnb_reviews_count": 0,
+      "accommodates": 6,
+      "on_website": true,
+      "on_socials": false,
+      "location": "colorado",
+      "address": "Woodland Park, CO 80863",
+      "amenities_verified": [],
+      "amenities_prohibited": [
+        "hot tub"
+      ],
+      "notes": "6th CO listing \u2014 added to portfolio ~2026-05-15, added to units.json SSOT 2026-05-27 by cto-task114. Guesty listingId 6a03b7807e628900149378d0 + display name 'Woodland Peak Tiny Lodge' + accommodates=6 confirmed via prior CS-knowledge audit (max-6 upstream-bug RCA). NOT-YET-SOURCED fields set conservatively: airbnb_url/room_id/vanity_slug/display_name=null (no Airbnb listing verified for this unit), airbnb_rating=null + airbnb_reviews_count=0 (NEW listing, no verified reviews \u2014 do NOT cite review/rating social proof or Superhost). on_website/on_socials=false until Owner/Marketing confirm rotation. accommodates field is NEW to schema (existing rows lack it) \u2014 added to capture the max-6 capacity that drove the early-CI RCA. Refresh-units-json.sh should backfill Airbnb fields on next live pull. [2026-06-07 Marketing: airbnb_url/room_id/display_name BACKFILLED from live Guesty integrations.airbnb2 (FullConnected, room 1679043422816384080, curl-200 verified title=Woodland Peak Tiny Lodge). Prior null was stale. Rating/reviews still 0/new \u2014 no social proof. FLAG: not published to Guesty booking-engine channel (guestybookings.com) \u2014 Owner/Ops Guesty-admin action needed for direct-booking funnel.]"
+    }
+  ]
+}
