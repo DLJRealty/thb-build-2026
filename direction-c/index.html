@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiny Home Boutiques — Boutique Tiny Home Stays Under Pikes Peak · Woodland Park, Colorado</title>
+<meta name="description" content="Design-forward boutique tiny homes with direct Pikes Peak views in Woodland Park, Colorado. Book direct with your hosts — Airbnb Superhost, 1,000+ five-star reviews.">
+<!-- ============================================================
+     DESIGN DIRECTION C — "BRAND-LED"
+     Editorial / boutique-hotel aesthetic. Kinfolk-meets-alpine-lodge.
+     All imagery = labeled gradient PLACEHOLDERS for the build team.
+     No external deps except Google Fonts. No JS frameworks.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   TOKENS — muted mountain palette
+   ========================================================== */
+:root{
+  --pine:        #1f342a;   /* deep pine — primary dark */
+  --pine-soft:   #2c4638;
+  --sand:        #d8c6a6;   /* warm sand — accent */
+  --sand-soft:   #e9dfc9;
+  --cream:       #f7f3ea;   /* off-white — page ground */
+  --cream-deep:  #efe8da;
+  --dusk:        #5d7186;   /* dusk blue — secondary accent */
+  --dusk-deep:   #3d4f61;
+  --ink:         #24291f;   /* body text */
+  --ink-soft:    #5c6156;
+  --line:        rgba(31,52,42,.14);
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans:  "Inter", -apple-system, "Helvetica Neue", sans-serif;
+
+  --measure: 62ch;
+  --radius: 2px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* ==========================================================
+   RESET / BASE — mobile-first
+   ========================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:1rem;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:64px; /* room for sticky mobile bar */
+}
+img,svg{ display:block; max-width:100%; }
+a{ color:inherit; }
+ul{ list-style:none; }
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; line-height:1.12; color:var(--pine); }
+
+.wrap{ width:min(1180px, 100% - (var(--gutter) * 2)); margin-inline:auto; }
+
+/* Editorial section label — small caps kicker */
+.kicker{
+  display:inline-flex; align-items:center; gap:.75rem;
+  font-family:var(--sans); font-weight:500; font-size:.72rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--dusk);
+  margin-bottom:1.1rem;
+}
+.kicker::before{ content:""; width:2.25rem; height:1px; background:var(--dusk); opacity:.6; }
+
+/* Buttons */
+.btn{
+  display:inline-block; text-decoration:none; text-align:center;
+  font-family:var(--sans); font-weight:500; font-size:.8rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  padding:1rem 1.9rem; border-radius:var(--radius);
+  transition:background-color .35s var(--ease), color .35s var(--ease),
+             transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.btn-solid{ background:var(--pine); color:var(--cream); border:1px solid var(--pine); }
+.btn-solid:hover{ background:var(--pine-soft); transform:translateY(-2px); box-shadow:0 10px 24px -12px rgba(31,52,42,.55); }
+.btn-ghost{ background:transparent; color:var(--cream); border:1px solid rgba(247,243,234,.55); }
+.btn-ghost:hover{ background:rgba(247,243,234,.12); border-color:var(--cream); transform:translateY(-2px); }
+.btn-outline{ background:transparent; color:var(--pine); border:1px solid var(--pine); }
+.btn-outline:hover{ background:var(--pine); color:var(--cream); transform:translateY(-2px); }
+
+/* Image placeholder blocks — clearly labeled for build team */
+.ph{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  display:flex; align-items:flex-end;
+}
+.ph .ph-label{
+  position:relative; z-index:2;
+  font-family:var(--sans); font-weight:500; font-size:.62rem;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(247,243,234,.85);
+  background:rgba(31,52,42,.55);
+  padding:.45rem .7rem; margin:.6rem;
+  border:1px dashed rgba(247,243,234,.5); border-radius:var(--radius);
+  backdrop-filter:blur(2px);
+}
+/* placeholder gradient moods */
+.ph-dawn    { background:linear-gradient(165deg, #7d8ea3 0%, #b1977f 42%, #d8c6a6 72%, #4a5b4f 100%); }
+.ph-pine    { background:linear-gradient(160deg, #2c4638 0%, #1f342a 55%, #3d4f61 100%); }
+.ph-dusk    { background:linear-gradient(155deg, #5d7186 0%, #3d4f61 55%, #1f342a 100%); }
+.ph-sand    { background:linear-gradient(150deg, #e9dfc9 0%, #d8c6a6 50%, #8f8266 100%); }
+.ph-alpen   { background:linear-gradient(160deg, #c9a58c 0%, #8f7f88 45%, #5d7186 100%); }
+.ph-meadow  { background:linear-gradient(160deg, #6d7f60 0%, #3f5443 55%, #2c4638 100%); }
+.ph-star    { background:linear-gradient(170deg, #1c2733 0%, #2b3a4c 55%, #1f342a 100%); }
+
+/* ==========================================================
+   1 · ANNOUNCEMENT BAR
+   ========================================================== */
+.announce{
+  background:var(--pine); color:var(--sand-soft);
+  font-size:.72rem; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
+  text-align:center; padding:.6rem var(--gutter); line-height:1.5;
+}
+.announce strong{ font-weight:600; color:var(--cream); }
+.announce .dot{ margin:0 .55em; opacity:.5; }
+
+/* ==========================================================
+   HEADER / NAV
+   ========================================================== */
+.site-head{
+  position:sticky; top:0; z-index:60;
+  background:rgba(247,243,234,.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{ display:flex; align-items:center; justify-content:space-between; padding:.9rem 0; }
+.brand{ text-decoration:none; line-height:1.1; }
+.brand .brand-name{ font-family:var(--serif); font-size:1.22rem; font-weight:500; color:var(--pine); letter-spacing:.01em; }
+.brand .brand-sub{ display:block; font-family:var(--sans); font-size:.6rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--dusk); margin-top:.15rem; }
+.nav-links{ display:none; align-items:center; gap:2rem; }
+.nav-links a{
+  text-decoration:none; font-size:.78rem; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink);
+  position:relative; padding-bottom:.2rem;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:0; width:100%; height:1px;
+  background:var(--pine); transform:scaleX(0); transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.nav-links a:hover::after{ transform:scaleX(1); }
+.head-cta{ display:none; }
+/* mobile menu — checkbox toggle, no JS needed */
+.menu-check{ position:absolute; opacity:0; pointer-events:none; }
+.menu-btn{ display:flex; flex-direction:column; gap:5px; padding:.6rem .2rem; cursor:pointer; }
+.menu-btn span{ width:24px; height:1.5px; background:var(--pine); transition:transform .3s var(--ease), opacity .3s var(--ease); }
+.menu-check:checked ~ .head-in .menu-btn span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+.menu-check:checked ~ .head-in .menu-btn span:nth-child(2){ opacity:0; }
+.menu-check:checked ~ .head-in .menu-btn span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+.mobile-nav{
+  display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s var(--ease);
+  border-top:0 solid var(--line);
+}
+.menu-check:checked ~ .mobile-nav{ grid-template-rows:1fr; border-top-width:1px; }
+.mobile-nav > div{ overflow:hidden; }
+.mobile-nav a{
+  display:block; text-decoration:none; padding:1rem var(--gutter);
+  font-family:var(--serif); font-size:1.15rem; color:var(--pine);
+  border-bottom:1px solid var(--line);
+}
+.mobile-nav a:last-child{ border-bottom:none; }
+
+/* ==========================================================
+   2 · HERO
+   ========================================================== */
+.hero{ position:relative; min-height:82vh; display:flex; align-items:flex-end; overflow:hidden; }
+.hero-ph{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to top, rgba(24,36,29,.78) 0%, rgba(24,36,29,.28) 45%, rgba(93,113,134,.18) 100%),
+    linear-gradient(168deg, #8fa0b4 0%, #c1a184 34%, #d8c6a6 58%, #55665a 82%, #1f342a 100%);
+}
+.hero-ph-label{
+  position:absolute; top:1rem; right:1rem; z-index:2;
+  font-size:.62rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(247,243,234,.85); background:rgba(31,52,42,.55);
+  border:1px dashed rgba(247,243,234,.5); border-radius:var(--radius);
+  padding:.45rem .7rem; backdrop-filter:blur(2px);
+}
+.hero-in{ position:relative; z-index:3; width:100%; padding:7rem 0 clamp(3rem,8vh,5.5rem); }
+.hero-kicker{
+  font-size:.72rem; font-weight:500; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--sand-soft); margin-bottom:1.4rem;
+  display:inline-flex; align-items:center; gap:.75rem;
+}
+.hero-kicker::before{ content:""; width:2.5rem; height:1px; background:var(--sand); }
+.hero h1{
+  color:var(--cream);
+  font-size:clamp(2.6rem, 7.5vw, 5.2rem);
+  font-weight:400; letter-spacing:-.01em; max-width:12ch;
+  margin-bottom:1.25rem;
+}
+.hero h1 em{ font-style:italic; font-weight:400; color:var(--sand-soft); }
+.hero p{
+  color:rgba(247,243,234,.88); max-width:46ch;
+  font-size:clamp(1rem, 1.6vw, 1.15rem); font-weight:300; margin-bottom:2.25rem;
+}
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:.9rem; }
+.hero-scroll{
+  position:absolute; z-index:3; right:var(--gutter); bottom:2rem;
+  display:none; writing-mode:vertical-rl;
+  font-size:.62rem; letter-spacing:.3em; text-transform:uppercase;
+  color:rgba(247,243,234,.65); text-decoration:none;
+}
+
+/* ==========================================================
+   3 · TRUST STRIP
+   ========================================================== */
+.trust{ background:var(--cream); border-bottom:1px solid var(--line); }
+.trust-in{
+  display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line);
+  border-inline:1px solid var(--line);
+}
+.trust-item{ background:var(--cream); padding:1.6rem 1.25rem; text-align:center; }
+.trust-item .t-mark{
+  font-family:var(--serif); font-size:1.35rem; color:var(--dusk); display:block; margin-bottom:.35rem;
+}
+.trust-item .t-head{
+  font-family:var(--serif); font-size:1.02rem; color:var(--pine); display:block; margin-bottom:.2rem;
+}
+.trust-item .t-sub{ font-size:.74rem; letter-spacing:.06em; color:var(--ink-soft); }
+
+/* ==========================================================
+   4 · THE HOMES — editorial card grid
+   ========================================================== */
+.homes{ padding:clamp(4rem,9vw,7rem) 0; }
+.homes-head{ max-width:var(--measure); margin-bottom:clamp(2.5rem,5vw,4rem); }
+.homes-head h2, .split h2, .area-head h2, .love h2{
+  font-size:clamp(1.9rem, 4.2vw, 3rem); margin-bottom:1rem; letter-spacing:-.01em;
+}
+.homes-head p{ color:var(--ink-soft); max-width:52ch; }
+.home-grid{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,4vw,3rem) clamp(1.25rem,3vw,2.25rem); }
+.home-card{ text-decoration:none; display:block; }
+.home-card .ph{ aspect-ratio:4/3; margin-bottom:1.1rem; }
+.home-card .ph::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(24,36,29,.25), transparent 45%);
+  transition:opacity .45s var(--ease); opacity:.7;
+}
+.home-card .ph > .ph-img{ position:absolute; inset:0; transition:transform .8s var(--ease); }
+.home-card:hover .ph > .ph-img{ transform:scale(1.045); }
+.home-card:hover .ph::after{ opacity:1; }
+.home-card{ transition:transform .45s var(--ease); }
+.home-card:hover{ transform:translateY(-4px); }
+.home-num{
+  font-family:var(--sans); font-size:.66rem; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--dusk); display:block; margin-bottom:.4rem;
+}
+.home-card h3{ font-size:1.28rem; margin-bottom:.4rem; transition:color .3s var(--ease); }
+.home-card:hover h3{ color:var(--dusk-deep); }
+.home-card .home-desc{ font-size:.9rem; color:var(--ink-soft); max-width:42ch; }
+.home-card .home-link{
+  display:inline-block; margin-top:.7rem; font-size:.72rem; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--pine);
+  border-bottom:1px solid var(--sand); padding-bottom:.15rem;
+}
+/* coming soon card */
+.home-card.soon .ph{ outline:1px dashed rgba(31,52,42,.35); outline-offset:-8px; }
+.soon-tag{
+  position:absolute; top:.85rem; left:.85rem; z-index:2;
+  font-size:.62rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--pine); background:var(--sand-soft); padding:.4rem .75rem; border-radius:var(--radius);
+}
+.homes-foot{ margin-top:clamp(2.5rem,5vw,3.5rem); text-align:center; }
+
+/* ==========================================================
+   5 · WHY BOOK DIRECT — editorial split
+   ========================================================== */
+.split{ background:var(--pine); color:var(--cream); }
+.split-in{
+  display:grid; grid-template-columns:1fr; gap:0;
+}
+.split-copy{ padding:clamp(3.5rem,8vw,6.5rem) 0; }
+.split .kicker{ color:var(--sand); }
+.split .kicker::before{ background:var(--sand); }
+.split h2{ color:var(--cream); max-width:14ch; }
+.split h2 em{ font-style:italic; color:var(--sand-soft); }
+.split-lead{ color:rgba(247,243,234,.85); max-width:48ch; margin:1.25rem 0 2.25rem; }
+.direct-list{ display:grid; gap:1.6rem; margin-bottom:2.5rem; }
+.direct-list li{ display:grid; grid-template-columns:auto 1fr; gap:1.1rem; align-items:start; }
+.direct-list .d-num{
+  font-family:var(--serif); font-style:italic; font-size:1.1rem; color:var(--sand);
+  border:1px solid rgba(216,198,166,.45); border-radius:50%;
+  width:2.4rem; height:2.4rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.direct-list h3{ color:var(--cream); font-size:1.12rem; margin-bottom:.25rem; }
+.direct-list p{ color:rgba(247,243,234,.75); font-size:.92rem; max-width:46ch; }
+.split .btn-sand{ background:var(--sand); color:var(--pine); border:1px solid var(--sand); }
+.split .btn-sand:hover{ background:var(--sand-soft); transform:translateY(-2px); box-shadow:0 10px 24px -12px rgba(0,0,0,.5); }
+.split-media{ position:relative; min-height:320px; }
+.split-media .ph{ position:absolute; inset:0; border-radius:0; }
+
+/* ==========================================================
+   6 · AREA — Woodland Park & the Peak
+   ========================================================== */
+.area{ padding:clamp(4rem,9vw,7rem) 0; background:var(--cream-deep); }
+.area-head{ max-width:var(--measure); margin-bottom:clamp(2.5rem,5vw,3.5rem); }
+.area-head p{ color:var(--ink-soft); max-width:52ch; }
+.area-grid{ display:grid; grid-template-columns:1fr; gap:1.5rem; }
+.area-tile{ text-decoration:none; display:block; transition:transform .45s var(--ease); }
+.area-tile:hover{ transform:translateY(-4px); }
+.area-tile .ph{ aspect-ratio:3/4; }
+.area-tile .ph > .ph-img{ position:absolute; inset:0; transition:transform .8s var(--ease); }
+.area-tile:hover .ph > .ph-img{ transform:scale(1.05); }
+.area-tile .ph::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(24,36,29,.6), transparent 55%);
+}
+.area-caption{
+  position:absolute; z-index:2; left:1.25rem; right:1.25rem; bottom:1.25rem; color:var(--cream);
+}
+.area-caption .a-kick{
+  display:block; font-size:.62rem; font-weight:500; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--sand-soft); margin-bottom:.35rem;
+}
+.area-caption h3{ color:var(--cream); font-size:1.4rem; margin-bottom:.25rem; }
+.area-caption p{ font-size:.84rem; color:rgba(247,243,234,.85); max-width:34ch; }
+
+/* ==========================================================
+   7 · GUEST LOVE — pull quotes
+   ========================================================== */
+.love{ padding:clamp(4rem,9vw,7rem) 0; text-align:center; }
+.love .kicker{ justify-content:center; }
+.love .kicker::after{ content:""; width:2.25rem; height:1px; background:var(--dusk); opacity:.6; }
+.love h2{ margin-bottom:clamp(2.5rem,5vw,4rem); }
+.quote-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; text-align:left; }
+.quote{
+  border-top:1px solid var(--line); padding-top:1.75rem;
+  transition:transform .45s var(--ease);
+}
+.quote:hover{ transform:translateY(-4px); }
+.quote .q-mark{ font-family:var(--serif); font-size:2.6rem; line-height:.6; color:var(--sand); display:block; margin-bottom:1rem; }
+.quote blockquote{
+  font-family:var(--serif); font-size:1.18rem; font-style:italic; font-weight:300;
+  color:var(--pine); line-height:1.45; margin-bottom:1.1rem;
+}
+.quote figcaption{ font-size:.74rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); }
+.quote .q-stars{ color:var(--dusk); letter-spacing:.15em; margin-bottom:.35rem; font-size:.8rem; }
+
+/* ==========================================================
+   CLOSING CTA BAND
+   ========================================================== */
+.band{
+  background:var(--dusk-deep); color:var(--cream); text-align:center;
+  padding:clamp(3.5rem,8vw,5.5rem) 0;
+}
+.band h2{ color:var(--cream); font-size:clamp(1.8rem,4vw,2.8rem); max-width:22ch; margin:0 auto 1rem; }
+.band h2 em{ font-style:italic; color:var(--sand-soft); }
+.band p{ color:rgba(247,243,234,.8); max-width:48ch; margin:0 auto 2rem; }
+
+/* ==========================================================
+   8 · FOOTER
+   ========================================================== */
+.site-foot{ background:var(--pine); color:rgba(247,243,234,.75); padding:clamp(3rem,7vw,4.5rem) 0 6.5rem; }
+.foot-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; margin-bottom:3rem; }
+.foot-brand .brand-name{ font-family:var(--serif); font-size:1.35rem; color:var(--cream); }
+.foot-brand .brand-sub{ display:block; font-size:.6rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--sand); margin:.3rem 0 1rem; }
+.foot-brand p{ font-size:.88rem; max-width:34ch; }
+.foot-col h4{
+  color:var(--sand-soft); font-family:var(--sans); font-size:.68rem; font-weight:600;
+  letter-spacing:.24em; text-transform:uppercase; margin-bottom:1rem;
+}
+.foot-col a{ display:block; text-decoration:none; font-size:.9rem; padding:.3rem 0; transition:color .3s var(--ease); }
+.foot-col a:hover{ color:var(--cream); }
+.foot-col .soc{ font-size:.9rem; }
+.foot-base{
+  border-top:1px solid rgba(247,243,234,.15); padding-top:1.5rem;
+  display:flex; flex-direction:column; gap:.5rem;
+  font-size:.72rem; letter-spacing:.06em; color:rgba(247,243,234,.5);
+}
+
+/* ==========================================================
+   STICKY MOBILE BOOK-DIRECT BAR
+   ========================================================== */
+.mobile-book{
+  position:fixed; left:0; right:0; bottom:0; z-index:70;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  background:var(--pine); border-top:1px solid rgba(216,198,166,.3);
+  padding:.7rem var(--gutter);
+  padding-bottom:calc(.7rem + env(safe-area-inset-bottom));
+}
+.mobile-book .mb-copy{ color:var(--sand-soft); font-size:.72rem; letter-spacing:.08em; line-height:1.4; }
+.mobile-book .mb-copy strong{ display:block; color:var(--cream); font-family:var(--serif); font-size:.95rem; font-weight:400; letter-spacing:0; }
+.mobile-book .btn{ padding:.75rem 1.4rem; font-size:.72rem; white-space:nowrap; }
+.mobile-book .btn-sand{ background:var(--sand); color:var(--pine); border:1px solid var(--sand); }
+.mobile-book .btn-sand:hover{ background:var(--sand-soft); }
+
+/* Scroll reveal (progressive enhancement; content visible without JS) */
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ transition:none !important; animation:none !important; }
+  .reveal{ opacity:1; transform:none; }
+}
+
+/* ==========================================================
+   BREAKPOINTS
+   ========================================================== */
+@media (min-width: 640px){
+  .trust-in{ grid-template-columns:repeat(4,1fr); }
+  .home-grid{ grid-template-columns:repeat(2,1fr); }
+  .quote-grid{ grid-template-columns:repeat(3,1fr); }
+  .area-grid{ grid-template-columns:repeat(3,1fr); }
+}
+@media (min-width: 960px){
+  body{ padding-bottom:0; }
+  .mobile-book{ display:none; }
+  .menu-btn{ display:none; }
+  .mobile-nav{ display:none; }
+  .nav-links{ display:flex; }
+  .head-cta{ display:inline-block; padding:.7rem 1.4rem; font-size:.7rem; }
+  .hero-scroll{ display:block; }
+  .home-grid{ grid-template-columns:repeat(3,1fr); }
+  /* editorial rhythm: feature the first card larger */
+  .home-card.feature{ grid-column:span 2; }
+  .home-card.feature .ph{ aspect-ratio:16/9; }
+  .split-in{ grid-template-columns:1.05fr .95fr; align-items:stretch; }
+  .split-copy{ padding-right:clamp(2rem,5vw,4.5rem); }
+  .split-media{ min-height:100%; }
+  .foot-grid{ grid-template-columns:1.4fr 1fr 1fr 1fr; }
+  .foot-base{ flex-direction:row; justify-content:space-between; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · ANNOUNCEMENT BAR ============ -->
+<div class="announce" role="note">
+  Book direct with your hosts <span class="dot">·</span> <strong>Airbnb Superhost</strong> <span class="dot">·</span> 1,000+ five-star reviews
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <input type="checkbox" id="menu" class="menu-check" aria-label="Toggle menu">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="Tiny Home Boutiques — home">
+      <span class="brand-name">Tiny Home Boutiques</span>
+      <span class="brand-sub">Woodland Park · Colorado</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#homes">The Homes</a>
+      <a href="#direct">Why Book Direct</a>
+      <a href="#area">The Area</a>
+      <a href="#love">Guest Love</a>
+    </nav>
+    <a class="btn btn-solid head-cta" href="#homes">Book Direct</a>
+    <label for="menu" class="menu-btn" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <div>
+      <a href="#homes">The Homes</a>
+      <a href="#direct">Why Book Direct</a>
+      <a href="#area">The Area</a>
+      <a href="#love">Guest Love</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ 2 · HERO ============ -->
+<section class="hero">
+  <div class="hero-ph" aria-hidden="true"></div>
+  <span class="hero-ph-label">HERO: Pikes Peak dawn from Boutique TinyHome deck</span>
+  <div class="wrap hero-in">
+    <span class="hero-kicker">Boutique tiny home stays · 8,500 ft</span>
+    <h1>Wake up under <em>Pikes Peak.</em></h1>
+    <p>Seven design-forward tiny homes in the pines of Woodland Park, Colorado — each one small on square footage, generous on view.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="#homes" style="background:var(--sand); border-color:var(--sand); color:var(--pine);">See Our Homes</a>
+      <a class="btn btn-ghost" href="#direct">Why Book Direct</a>
+    </div>
+  </div>
+  <a class="hero-scroll" href="#homes">Scroll</a>
+</section>
+
+<!-- ============ 3 · TRUST STRIP ============ -->
+<section class="trust" aria-label="Why guests trust us">
+  <div class="wrap trust-in">
+    <div class="trust-item">
+      <span class="t-mark" aria-hidden="true">✦</span>
+      <span class="t-head">Airbnb Superhost</span>
+      <span class="t-sub">Season after season</span>
+    </div>
+    <div class="trust-item">
+      <span class="t-mark" aria-hidden="true">★</span>
+      <span class="t-head">1,000+ five-star reviews</span>
+      <span class="t-sub">Across our homes</span>
+    </div>
+    <div class="trust-item">
+      <span class="t-mark" aria-hidden="true">✉</span>
+      <span class="t-head">Fast, personal replies</span>
+      <span class="t-sub">From your hosts, not a call center</span>
+    </div>
+    <div class="trust-item">
+      <span class="t-mark" aria-hidden="true">◍</span>
+      <span class="t-head">24/7 hands-on care</span>
+      <span class="t-sub">Before, during &amp; after your stay</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · THE HOMES ============ -->
+<section class="homes" id="homes">
+  <div class="wrap">
+    <header class="homes-head reveal">
+      <span class="kicker">The Collection</span>
+      <h2>Seven small houses. One enormous mountain.</h2>
+      <p>Every home in the collection is styled by hand and set to face the Peak. Choose your view — the mountain does the rest.</p>
+    </header>
+
+    <div class="home-grid">
+      <a class="home-card feature reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-dawn" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Unit Y exterior, deck + Pikes Peak backdrop</figcaption>
+        </figure>
+        <span class="home-num">No. 01</span>
+        <h3>Boutique TinyHome w/Direct View of PikesPeak!</h3>
+        <p class="home-desc">The signature stay — a front-row Pikes Peak panorama from your morning coffee to the last ember of the gas fire pit.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-pine" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Unit W interior, warm evening light</figcaption>
+        </figure>
+        <span class="home-num">No. 02</span>
+        <h3>Pikes Peak Boutique Retreat</h3>
+        <p class="home-desc">A calm, curated hideaway in the pines — slow mornings, mountain air, evenings around the gas fire pit.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-alpen" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Unit X exterior at golden hour</figcaption>
+        </figure>
+        <span class="home-num">No. 03</span>
+        <h3>Pikes Peak BrightStar Boutique</h3>
+        <p class="home-desc">Light-filled by day, star-filled by night — big windows aimed straight at the high country.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-dusk" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Unit 33 deck view at dusk</figcaption>
+        </figure>
+        <span class="home-num">No. 04</span>
+        <h3>Pikes Peak Heaven's Retreat</h3>
+        <p class="home-desc">Perched for the view — dusk-blue evenings over the Peak and a gas fire pit glowing below.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-meadow" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Mountain Retreat exterior, forest setting</figcaption>
+        </figure>
+        <span class="home-num">No. 05</span>
+        <h3>Pikes Peak Mountain Retreat</h3>
+        <p class="home-desc">Tucked into the evergreens — a quiet basecamp for mountain days and fireside nights.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-sand" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Unit 35 exterior, morning light</figcaption>
+        </figure>
+        <span class="home-num">No. 06</span>
+        <h3>Woodland Peak Tiny Lodge</h3>
+        <p class="home-desc">Lodge warmth at tiny-home scale — timber tones, mountain views, and room to breathe.</p>
+        <span class="home-link">View this home</span>
+      </a>
+
+      <a class="home-card soon reveal" href="#" aria-label="Coming soon: Woodland Park Home with Direct Views of Pikes Peak!">
+        <figure class="ph">
+          <span class="soon-tag">Coming Summer 2026</span>
+          <div class="ph-img ph-star" aria-hidden="true"></div>
+          <figcaption class="ph-label">IMG: Aspen Lodge Retreat teaser — swap when live</figcaption>
+        </figure>
+        <span class="home-num">No. 07 · Coming Soon</span>
+        <h3>Woodland Park Home with Direct Views of Pikes Peak!</h3>
+        <p class="home-desc">The newest addition to the collection opens this summer — direct Peak views, full-size comfort.</p>
+        <span class="home-link">Be first to know</span>
+      </a>
+    </div>
+
+    <div class="homes-foot reveal">
+      <a class="btn btn-outline" href="#">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · WHY BOOK DIRECT ============ -->
+<section class="split" id="direct">
+  <div class="wrap split-in">
+    <div class="split-copy reveal">
+      <span class="kicker">Book Direct</span>
+      <h2>The best way to stay with us is <em>with us.</em></h2>
+      <p class="split-lead">No middle layer, no ticket queue. When you book at tinyhomeboutiques.com, you're dealing directly with the people who make the beds, light the gas fire pits, and know exactly which deck catches the sunrise.</p>
+      <ul class="direct-list">
+        <li>
+          <span class="d-num" aria-hidden="true">i</span>
+          <div>
+            <h3>Deal directly with your hosts</h3>
+            <p>Questions before, during, or after your stay go straight to us — the people who actually care for these homes.</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-num" aria-hidden="true">ii</span>
+          <div>
+            <h3>The fastest answers, day or night</h3>
+            <p>Personal replies in minutes, around the clock. That's the same responsiveness that earned our Superhost badge.</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-num" aria-hidden="true">iii</span>
+          <div>
+            <h3>The best way to stay with us</h3>
+            <p>Direct guests always get our full attention, our local recommendations, and first word on new homes and open dates.</p>
+          </div>
+        </li>
+      </ul>
+      <a class="btn btn-sand" href="#homes">Book Your Stay Direct</a>
+    </div>
+    <div class="split-media">
+      <figure class="ph">
+        <div class="ph-img ph-dawn" aria-hidden="true" style="position:absolute; inset:0;"></div>
+        <figcaption class="ph-label">IMG: Hosts' welcome detail — styled interior vignette or guestbook on table</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 · AREA ============ -->
+<section class="area" id="area">
+  <div class="wrap">
+    <header class="area-head reveal">
+      <span class="kicker">The Area</span>
+      <h2>Woodland Park &amp; the Peak</h2>
+      <p>You're staying in the "City Above the Clouds" — the front porch of Pikes Peak country. Everything below is a short, scenic drive from your door.</p>
+    </header>
+    <div class="area-grid">
+      <a class="area-tile reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-dusk" aria-hidden="true"></div>
+          <figcaption class="ph-label" style="position:absolute; top:.85rem; right:.85rem; margin:0;">IMG: Pikes Peak summit vista</figcaption>
+          <div class="area-caption">
+            <span class="a-kick">14,115 ft</span>
+            <h3>Pikes Peak</h3>
+            <p>Drive, hike, or ride the cog railway to America's Mountain.</p>
+          </div>
+        </figure>
+      </a>
+      <a class="area-tile reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-alpen" aria-hidden="true"></div>
+          <figcaption class="ph-label" style="position:absolute; top:.85rem; right:.85rem; margin:0;">IMG: Garden of the Gods red rocks</figcaption>
+          <div class="area-caption">
+            <span class="a-kick">30 min away</span>
+            <h3>Garden of the Gods</h3>
+            <p>Red-rock cathedrals against the Peak — golden hour is unmissable.</p>
+          </div>
+        </figure>
+      </a>
+      <a class="area-tile reveal" href="#">
+        <figure class="ph">
+          <div class="ph-img ph-star" aria-hidden="true"></div>
+          <figcaption class="ph-label" style="position:absolute; top:.85rem; right:.85rem; margin:0;">IMG: Night sky over the tiny homes</figcaption>
+          <div class="area-caption">
+            <span class="a-kick">From your deck</span>
+            <h3>Stargazing</h3>
+            <p>Thin air, dark skies — the Milky Way from 8,500 feet.</p>
+          </div>
+        </figure>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · GUEST LOVE ============ -->
+<section class="love" id="love">
+  <div class="wrap">
+    <span class="kicker reveal">Guest Love</span>
+    <h2 class="reveal">In their words</h2>
+    <div class="quote-grid">
+      <figure class="quote reveal">
+        <span class="q-mark" aria-hidden="true">&ldquo;</span>
+        <div class="q-stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>The view of Pikes Peak from the deck stopped us in our tracks. We drank our coffee in silence both mornings — didn't want to miss a minute of it.</blockquote>
+        <figcaption>— K.&nbsp;M.</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <span class="q-mark" aria-hidden="true">&ldquo;</span>
+        <div class="q-stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>Spotless, beautifully styled, and thought through down to the smallest detail. It felt more like a boutique hotel than a rental.</blockquote>
+        <figcaption>— J.&nbsp;R.</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <span class="q-mark" aria-hidden="true">&ldquo;</span>
+        <div class="q-stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>Our hosts answered every question within minutes — even late in the evening. Easily the most cared-for we've felt anywhere we've stayed.</blockquote>
+        <figcaption>— A.&nbsp;T.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA BAND ============ -->
+<section class="band">
+  <div class="wrap reveal">
+    <h2>The mountain is waiting. <em>So are we.</em></h2>
+    <p>Pick your home, pick your dates, and book directly with the hosts who'll be looking after you.</p>
+    <a class="btn btn-solid" href="#homes" style="background:var(--sand); border-color:var(--sand); color:var(--pine);">See Our Homes</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 8 · FOOTER ============ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-name">Tiny Home Boutiques</span>
+        <span class="brand-sub">Woodland Park · Colorado</span>
+        <p>Boutique tiny home stays with direct Pikes Peak views — hosted with care, booked direct.</p>
+      </div>
+      <nav class="foot-col" aria-label="Footer — explore">
+        <h4>Explore</h4>
+        <a href="#homes">The Homes</a>
+        <a href="#direct">Why Book Direct</a>
+        <a href="#area">The Area</a>
+        <a href="#love">Guest Love</a>
+      </nav>
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <a href="#">Woodland Park, Colorado</a>
+        <a href="#">stay@tinyhomeboutiques.com</a>
+        <a href="#">tinyhomeboutiques.com</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <a class="soc" href="#">Instagram — @dlj_properties</a>
+        <a class="soc" href="#">Pinterest — @dljrealty</a>
+        <a class="soc" href="#">X — @DljRealty</a>
+        <a class="soc" href="#">YouTube — @DLJProperties</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Tiny Home Boutiques. All rights reserved.</span>
+      <span>Airbnb Superhost · Woodland Park, Colorado</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE BOOK-DIRECT BAR ============ -->
+<div class="mobile-book" role="complementary" aria-label="Book direct">
+  <div class="mb-copy">
+    <strong>Stay under the Peak</strong>
+    Superhost · 1,000+ five-star reviews
+  </div>
+  <a class="btn btn-sand" href="#homes">Book Direct</a>
+</div>
+
+<script>
+/* Minimal vanilla enhancement only.
+   1) Scroll-reveal via IntersectionObserver (content fully visible without JS).
+   2) Close mobile menu after tapping a link. */
+(function(){
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+  var menu = document.getElementById('menu');
+  document.querySelectorAll('.mobile-nav a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.checked = false; });
+  });
+})();
+</script>
+
+</body>
+</html>
